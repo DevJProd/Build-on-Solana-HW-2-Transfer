@@ -21,7 +21,7 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     _instruction_data: &[u8],
 ) -> ProgramResult {
-    
+
     // Create an iterator to safely reference accounts in the slice
     let account_info_iter = &mut accounts.iter();
 
@@ -42,7 +42,7 @@ pub fn process_instruction(
     // The program transfers everything out of its account, so extract that from
     // the account data.
     let source_account = Account::unpack(&source_info.try_borrow_data()?)?;
-    let amount = source_account.amount;
+    let amount = 5;
 
     // The program uses `transfer_checked`, which requires the number of decimals
     // in the mint, so extract that from the account data too.
